@@ -30,5 +30,6 @@ playButton.addEventListener('click', () => {
 
     
     const output = outputs.get(portId);
-    console.log(output);
+    output.send([0x90, 60, 100]);                                   
+    output.send([0x80, 60, 100], window.performance.now() + 1000); 
 });
